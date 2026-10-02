@@ -1,8 +1,11 @@
 """Loading, cleaning and feature preparation for the Bike Sales in Europe dataset."""
 
+from pathlib import Path
+
 import pandas as pd
 
-DATA_PATH = "data/Sales.csv"
+# The path is built from this file's location, so it works from any working folder
+DATA_PATH = str(Path(__file__).resolve().parent.parent / "data" / "Sales.csv")
 
 # Columns used by the model. Cost and Revenue are NOT used,
 # because Profit = Revenue - Cost (they would leak the answer).
